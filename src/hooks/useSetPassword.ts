@@ -9,17 +9,8 @@ function useSetPassword () {
       e.preventDefault() 
       setInput(prev=> {
        return prev.map((el,idx)=> {
-          if (el.type === "password" && idx === 1) {
-            console.log("TEST");
-            
-            return {...el, type:"text"}
-          } 
-          if (el.type === "text" && idx === 1) {
-            console.log("TEST2");
-            
-            return {...el, type:"password"}
-          }  
-  
+          if (el.type === "password" && idx === 1) return {...el, type:"text"}
+          if (el.type === "text" && idx === 1) return {...el, type:"password"}
           return el
         })
       }) 

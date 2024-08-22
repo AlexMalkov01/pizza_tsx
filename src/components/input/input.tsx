@@ -3,9 +3,7 @@ import style from "./input.module.css"
 import classNames from "classnames";
 import Button from "../button/button";
 
-function Input ( { button ,img,labelFlex,labelTxt, labelId , children ,...props}:IInput) {
-    console.log(img)
-    
+function Input ( { onClick ,img,labelFlex,labelTxt, labelId , ...props}:IInput) {
     return (
         <>
         <label className={classNames(null , {
@@ -15,7 +13,7 @@ function Input ( { button ,img,labelFlex,labelTxt, labelId , children ,...props}
         <input className={style.inpetLogo} id={labelId}
         {...props} 
         /> 
-        {!!img && <button onClick={button} className={style.inputBtn}> <img src={img}></img></button>}
+        {!!img && <button onClick={onClick} className={style.inputBtn}> <img src={img}></img></button>}
         </label>
         </>
     )

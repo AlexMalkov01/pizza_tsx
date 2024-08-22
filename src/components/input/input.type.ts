@@ -7,7 +7,7 @@ interface IInput extends InputHTMLAttributes<HTMLInputElement> {
     labelTxt?: string,
     labelFlex?:"flex"
     img?: string,
-    button?:(e:React.MouseEvent<HTMLButtonElement>)=>void
+    onClick?:(e:React.MouseEvent<HTMLButtonElement>)=>void
 } 
 
 

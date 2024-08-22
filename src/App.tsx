@@ -15,7 +15,7 @@ function App() {
     <div className='conteiner'>
     <h1>Регистрация</h1>
     <form className='login-fo' action=""> 
-      { inputs.map(( el:IInput , idx:number )=> <Input button={setPassword} {...el} key={idx}/>)}
+      { inputs.map(( el:IInput , idx:number )=> <Input onClick={setPassword} {...el} key={idx}/>)}
     </form>
     </div>
     </>
