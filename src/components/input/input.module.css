@@ -1,0 +1,39 @@
+.RegLabel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    font-size: 18px;
+    font-weight: 12px;
+    color: gainsboro; 
+} 
+
+.inpetLogo {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1.5px solid gainsboro;
+    background: none;
+    outline: none
+}
+
+.inpetLogo::placeholder {
+    font-size: 18px;
+    font-weight: 12px;
+    color: gainsboro; 
+}
+
+.inputBtn {
+    position: absolute;
+    border: none;
+    background: none;
+    right: 0;
+    top: 50%;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all .5s ease;
+}
+
+.inputBtn:hover {
+    background: gainsboro;
+}

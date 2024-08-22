@@ -1,0 +1,28 @@
+* {
+    user-select: none;
+    font-family: sans-serif;
+}
+
+:root {
+  
+} 
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 400px; 
+    padding: 30px;
+    border-radius: 10px;
+    border: solid 1.5px gainsboro;
+}
+
+.conteiner {
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
