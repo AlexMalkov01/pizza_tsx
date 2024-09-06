@@ -1,0 +1,22 @@
+.search {
+    position: relative;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: none;
+}
+
+.searchInput {
+    padding: 10px 30px 10px 45px;
+    background: rgb(252, 252, 252);
+    border: .5px rgb(218, 208, 208) solid;
+    border-radius: 8px;
+    min-width: 250px;
+}

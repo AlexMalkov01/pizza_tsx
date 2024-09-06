@@ -1,0 +1,19 @@
+.button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.whiteBtn {
+    background: white;
+}
+
+.orangeBtn {
+    background: orange;
+}

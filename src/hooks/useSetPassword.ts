@@ -1,5 +1,5 @@
 import { useState } from "react";
-import inputsLogo from "../components/input/inputsRendr"; 
+import inputsLogo from "../components/input/constant/inputsRendr"; 
 import { IInput } from "../components/input/input.type";
 
 function useSetPassword () {
@@ -8,10 +8,10 @@ function useSetPassword () {
     function setPassword (e:React.MouseEvent<HTMLButtonElement>) {
       e.preventDefault() 
       setInput(prev=> {
-       return prev.map((el,idx)=> {
-          if (el.type === "password" && idx === 1) return {...el, type:"text"}
-          if (el.type === "text" && idx === 1) return {...el, type:"password"}
-          return el
+       return prev.map((input)=> {
+          if (input.type === "password" && input.id ==="Password") return {...input, type:"text"}
+          if (input.type === "text" && input.id ==="Password") return {...input, type:"password"}
+          return input
         })
       }) 
     }

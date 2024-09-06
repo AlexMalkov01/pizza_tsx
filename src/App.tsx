@@ -6,6 +6,8 @@ import Input from './components/input/input'
 // import inputsLogo  from './components/input/inputsRendr'
 import { IInput } from './components/input/input.type'
 import useSetPassword from './hooks/useSetPassword'
+import { Link, Outlet } from 'react-router-dom'
+
 
 function App() {
 
@@ -14,11 +16,11 @@ function App() {
     <>
     <div className='conteiner'>
     <h1>Регистрация</h1>
-    <form className='login-fo' action=""> 
-      { inputs.map(( el:IInput , idx:number )=> <Input onClick={setPassword} {...el} key={idx}/>)}
+    <form onSubmit={(e)=>{e.preventDefault()}} className='login-fo' action=""> 
+      { inputs.map(( input:IInput , idx:number )=> <Input  isViewDetailBtn={input?.id ==="Password"} onClick={setPassword} {...input} key={idx}/>)} 
     </form>
-    </div>
-    </>
+    </div> 
+    </> 
   )
 }
 

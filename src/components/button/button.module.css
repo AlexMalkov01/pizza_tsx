@@ -1,0 +1,12 @@
+.buttonPrimary {
+    border-radius: 15px;
+    background-color: darkorange;
+    border: none;
+    padding:7px 16px 7px 16px;
+
+    cursor: pointer; 
+    color: azure;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}

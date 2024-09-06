@@ -1,0 +1,85 @@
+*{
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+.appMain {
+    display: flex;
+    height: 100vh;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.userPanel {
+    padding: 10px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1.5px solid gainsboro;
+
+    align-items: start;
+}
+
+.userName {
+    font-size: 16px;
+    font-weight: 600;
+} 
+
+.userMail {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navbar {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .3s;
+} 
+
+.active {
+    color: darkorange ;
+}
+
+.reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px; 
+}
+
+.link {
+    margin-top: auto;
+    text-decoration: none;
+}
+
+.content {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+.iconBtn {
+    width: 15px;
+    height: 15px; 
+    filter: invert(100%);
+}

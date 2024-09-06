@@ -1,11 +1,13 @@
 .RegLabel {
     position: relative;
+    gap: 5px;
     display: flex;
     flex-direction: column;
     max-width: 400px;
     font-size: 18px;
     font-weight: 12px;
     color: gainsboro; 
+    width: 100%;
 } 
 
 .inpetLogo {
@@ -29,9 +31,14 @@
     background: none;
     right: 0;
     top: 50%;
+    padding: 0 5px;
     cursor: pointer;
     border-radius: 6px;
     transition: all .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .inputBtn:hover {

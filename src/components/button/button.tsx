@@ -1,10 +1,13 @@
+import classNames from "classnames"
+import style from "./button.module.css"
 import { IButton } from "./button.type"
 
-function Button ({children}:IButton) {
+function Button ({children , className , ...props}:IButton) {
 
-    return <button>
+    return <button 
+       {...props} className={classNames(style.buttonPrimary,className)}> 
             {children}
-         </button>
+            </button>
 }
 
 
