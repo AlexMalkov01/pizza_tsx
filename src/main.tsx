@@ -8,7 +8,7 @@ import Layout from './components/layout/layout.tsx'
 import axios from 'axios'
 import { API_PRODUCT, TOKEN } from './helpers/helper.ts'
 import { IProductCard } from './components/product-card/productCard.type.ts'
-
+import IsLoginToken from './components/isLoginToken/isLoginToken.tsx'
 
 
 const Menu = lazy(()=> import(`./pages/menu/menu.tsx`));
@@ -20,7 +20,7 @@ const Login = lazy (()=> import("./components/authLoyaut/login/login.tsx"))
 
 const rout = createBrowserRouter([{
   path:"/",
-  element: <Layout/>,
+  element: <IsLoginToken><Layout/></IsLoginToken>,
   children:[{
     path:"/",
     element:<Menu/>,

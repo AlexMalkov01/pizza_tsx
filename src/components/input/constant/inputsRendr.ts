@@ -5,7 +5,8 @@ const inputsLogo:IInput[] = [
         labelTxt:"Ваш email",
         placeholder: "Email",
         id:"Email",
-        labelFlex: "flex"
+        labelFlex: "flex",
+        name:"email"
     },
     {   
         type: "password",
@@ -13,7 +14,8 @@ const inputsLogo:IInput[] = [
         placeholder: "Пароль",
         id:"Password",
         labelFlex: "flex",
-        autoComplete:"current-password"
+        autoComplete:"current-password",
+        name:"password"
     }
     ]
 

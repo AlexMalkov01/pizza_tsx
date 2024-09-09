@@ -65,6 +65,8 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 7px; 
+
+    margin-top: auto;
 }
 
 .link {

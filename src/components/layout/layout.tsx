@@ -1,10 +1,10 @@
-import { Link, Outlet , NavLink } from "react-router-dom";
+import { Link, Outlet , NavLink, Navigate, useNavigate } from "react-router-dom";
 import style from "./layout.module.css"
 import cn from "classnames"
 import Button from "../button/button"; 
 
 function Layout () {
-
+    const loginLink = useNavigate()
     return (
         <>
         <div className={cn(style.appMain)}> 
@@ -22,12 +22,13 @@ function Layout () {
                         Корзина
                     </NavLink>
                 </div>
-                <Link to={"/auth/registr"} className={cn(style.link)}>
-                <Button className={cn(style.reset)}>
+                <Button onClick={()=>{ 
+                localStorage.removeItem("jsx"); 
+                loginLink("/auth/login");
+                }} className={cn(style.reset)}>
                     <img className={cn(style.iconBtn)} src="/src/assets/power-button.svg" alt="power-button" />
-                    Войти 
+                    Выйти
                 </Button>
-                </Link>
             </div>
             <div className={cn(style.content)}>
                 <Outlet/> 
