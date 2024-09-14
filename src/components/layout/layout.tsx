@@ -2,9 +2,13 @@ import { Link, Outlet , NavLink, Navigate, useNavigate } from "react-router-dom"
 import style from "./layout.module.css"
 import cn from "classnames"
 import Button from "../button/button"; 
+import { useDispatch } from "react-redux";
+import { userActions } from "../../store/slice/user";
 
 function Layout () {
     const loginLink = useNavigate()
+    const disputch = useDispatch()
+    const { logaut } = userActions
     return (
         <>
         <div className={cn(style.appMain)}> 
@@ -23,7 +27,7 @@ function Layout () {
                     </NavLink>
                 </div>
                 <Button onClick={()=>{ 
-                localStorage.removeItem("jsx"); 
+                disputch(logaut())
                 loginLink("/auth/login");
                 }} className={cn(style.reset)}>
                     <img className={cn(style.iconBtn)} src="/src/assets/power-button.svg" alt="power-button" />

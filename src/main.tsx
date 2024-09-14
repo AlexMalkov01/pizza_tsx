@@ -1,14 +1,16 @@
-import { lazy, StrictMode, Suspense } from 'react'
-import { createRoot } from 'react-dom/client'
 import './index.css'
+import { lazy, StrictMode, Suspense } from 'react'
+import { Provider } from 'react-redux'
+import { store } from './store/store.ts'
+import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Cont from './pages/cont.tsx'
-import Prov from './pages/prov.tsx'
 import Layout from './components/layout/layout.tsx'
 import axios from 'axios'
 import { API_PRODUCT, TOKEN } from './helpers/helper.ts'
 import { IProductCard } from './components/product-card/productCard.type.ts'
 import IsLoginToken from './components/isLoginToken/isLoginToken.tsx'
+
 
 
 const Menu = lazy(()=> import(`./pages/menu/menu.tsx`));
@@ -71,8 +73,10 @@ const rout = createBrowserRouter([{
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Suspense fallback={<h1>Loading...</h1>}>
-    <RouterProvider router={rout}/>
-    </Suspense>
+    <Provider store={store}>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <RouterProvider router={rout}/>
+      </Suspense>
+    </Provider>
   </StrictMode>,
 )

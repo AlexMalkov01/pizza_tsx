@@ -14,12 +14,16 @@ function Menu () {
 
     const [products , setProducts] = useState<IProductCard[]>([]) 
     const [loader , setLoaeder] = useState<boolean>(false)
-    const [error , setError] = useState<string>()
+    const [error , setError] = useState<string|null>()
 
     useEffect(()=>{
         setLoaeder(true)
         getApiProducts()
     },[])
+
+    useEffect (()=>{
+
+    },[error])
 
     const getApiProducts = async () => { 
         try {
@@ -30,6 +34,7 @@ function Menu () {
             }) 
             setProducts(data)
             setLoaeder(false)
+            setError(null)
         } catch(e) {
             if (e instanceof AxiosError) {
                 setError( e?.response?.data?.message || e.message)

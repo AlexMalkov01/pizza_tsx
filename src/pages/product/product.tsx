@@ -3,7 +3,6 @@ import { IProductCard } from "../../components/product-card/productCard.type"
 
 function ProductPage () {
     const  data  = useLoaderData() as IProductCard[]
-    console.log(data);
     
     return (
         <>
