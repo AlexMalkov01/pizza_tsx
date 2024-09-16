@@ -23,37 +23,37 @@ const inputsLogo:IInput[] = [
 
     export const formReg = [
 
-        {   type: "text",
-            labelTxt:"Ваше имя",
-            placeholder: "Имя",
-            id:"name",
-            labelFlex: "flex",
-            name:"name"
-        },
-        {   
-            type: "text",
-            labelTxt:"Ваша фамилия",
-            placeholder: "Фамилия",
-            id:"surname",
-            labelFlex: "flex",
-            autoComplete:"current-password",
-            name:"surname"
-        },
         {   type: "email",
-            labelTxt:"Ваш email",
-            placeholder: "Email",
+            labelTxt:"Ваш email:",
+            placeholder: "Введите email",
             id:"Email",
             labelFlex: "flex",
             name:"email"
         },
         {   
             type: "password",
-            labelTxt:"Ваш пароль",
-            placeholder: "Пароль",
+            labelTxt:"Ваш пароль:",
+            placeholder: "Введите пароль",
             id:"Password",
             labelFlex: "flex",
             autoComplete:"current-password",
             name:"password"
+        },
+        {   type: "text",
+            labelTxt:"Ваше имя:",
+            placeholder: "Введите ваше имя",
+            id:"name",
+            labelFlex: "flex",
+            name:"name"
+        },
+        {   
+            type: "text",
+            labelTxt:"Ваша фамилия:",
+            placeholder: "Введите вашу фамилию",
+            id:"surname",
+            labelFlex: "flex",
+            autoComplete:"current-password",
+            name:"surname"
         }
     ]
 

@@ -4,6 +4,8 @@ import styles from "./productCard.module.css"
 import cn from "classnames"
 import classNames from "classnames"
 import SecondaryButton from "../SecondaryButton/SecondaryButton"
+import { useDispatch } from "react-redux"
+import { cartActions } from "../../store/slice/cart"
 
 const cardBtnIconUrl = "/src/assets/market.png"
 
@@ -16,7 +18,14 @@ function ProductCard ({
     rating ,
     className,
     ...props
-}:IProductCard) {
+}:IProductCard) 
+{
+    const dispatch = useDispatch() 
+
+    function addCart (e:MouseEvent):void {
+    e.preventDefault() 
+    dispatch(cartActions.add(id))
+    }
 
     return (
         <Link  className={cn(styles.wrapper)}
@@ -30,7 +39,7 @@ function ProductCard ({
                         {price} <span className={cn(styles.rub)}>₽</span>
                     </div>
                     <SecondaryButton color="orange">
-                        <img className={cn(styles.icon)} src={cardBtnIconUrl} alt="" />
+                        <img onClick={addCart} className={cn(styles.icon)} src={cardBtnIconUrl} alt="корзина" />
                     </SecondaryButton> 
 
                     <div className={cn(styles.rating)}>

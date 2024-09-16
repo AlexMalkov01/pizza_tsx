@@ -3,7 +3,7 @@ import { Outlet , NavLink, useNavigate } from "react-router-dom";
 import cn from "classnames"
 import Button from "../button/button"; 
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { IUserProfile, userActions } from "../../store/slice/user";
 import { RootStore } from "../../store/store";
 import { regActions } from "../../store/slice/regist";
@@ -11,6 +11,12 @@ import { regActions } from "../../store/slice/regist";
 function Layout () {
     const loginLink = useNavigate()
     const dispatch = useDispatch()
+    const cart = useSelector((store:RootStore)=> store.cart.items)
+    
+    const getCaunt = useCallback(()=>{
+       return cart.reduce((acc, i)=> acc+= i.count,0)
+    },[cart])
+    
     const { email, name, surname } = useSelector((state: RootState) => {
         
         const hasProfileData = (profile: IUserProfile): boolean => !!(profile.email || profile.name || profile.surname);
@@ -52,7 +58,7 @@ function Layout () {
                         Меню
                     </NavLink>
                     <NavLink to={"/cont"} className={({ isActive }) => cn(style.link,{ [style.active]: isActive })}>
-                        Корзина
+                        Корзина {getCaunt()}
                     </NavLink>
                 </div>
                 <Button onClick={()=>{ 

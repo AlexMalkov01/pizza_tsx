@@ -85,7 +85,7 @@ export interface IRegister {
           allowOutsideClick: false,
           allowEscapeKey: false
       })
-      })
+    })
 
       builder.addCase(registration.rejected,(state, action)=>{
         Swal.fire({
@@ -95,8 +95,8 @@ export interface IRegister {
           allowOutsideClick: false,
           allowEscapeKey: false  
       })
-      })
-    }
+    })
+  }
     }); 
 
 

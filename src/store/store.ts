@@ -3,11 +3,13 @@ import { userSlice } from "./slice/user";
 import { saveState } from "./storege";
 import { STOREGE_KEYS } from "../enams/storege.enam";
 import { registSlice } from "./slice/regist";
+import { cartSlice } from "./slice/cart";
 
 export const store = configureStore({
     reducer:{
         user: userSlice.reducer,
-        register: registSlice.reducer
+        register: registSlice.reducer,
+        cart: cartSlice.reducer
     }
 }) 
 
