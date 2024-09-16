@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, userActions} from "../../../store/slice/user";
 import { AppDispatch, RootStore, store } from "../../../store/store";
 import { UseSelector } from "react-redux";
+import inputsLogo from "../../input/constant/inputsRendr";
 
 export type LoginForm = {
     email : { 
@@ -24,16 +25,17 @@ export type LoginForm = {
 }
 
 function Login () {
-    const [inputs , setPassword] = useSetPassword();
+    const [inputs , setPassword] = useSetPassword(inputsLogo);
     const dispatch = useDispatch<AppDispatch>();
     const jwt = useSelector((stete:RootStore)=> stete.user.jwt)
     const mainPage = useNavigate()
     
     function submit (e:FormEvent) {
     e.preventDefault() 
+    
     const target = e.target as typeof e.target & LoginForm
     const {password , email} = target ;
-      dispatch(login({password: password?.value ,email: email?.value})) 
+      dispatch(login({password: password?.value ,email: email?.value}));
     }; 
 
     useEffect(()=>{

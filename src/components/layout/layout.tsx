@@ -1,22 +1,51 @@
-import { Link, Outlet , NavLink, Navigate, useNavigate } from "react-router-dom";
 import style from "./layout.module.css"
+import { Outlet , NavLink, useNavigate } from "react-router-dom";
 import cn from "classnames"
 import Button from "../button/button"; 
-import { useDispatch } from "react-redux";
-import { userActions } from "../../store/slice/user";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { IUserProfile, userActions } from "../../store/slice/user";
+import { RootStore } from "../../store/store";
+import { regActions } from "../../store/slice/regist";
 
 function Layout () {
     const loginLink = useNavigate()
-    const disputch = useDispatch()
-    const { logaut } = userActions
+    const dispatch = useDispatch()
+    const { email, name, surname } = useSelector((state: RootState) => {
+        
+        const hasProfileData = (profile: IUserProfile): boolean => !!(profile.email || profile.name || profile.surname);
+        const profile = hasProfileData(state.register.profile) ? state.register.profile : state.user.profile;
+        return profile;
+      });
+
+     
+    const jwtReg = useSelector((state:RootStore)=> state.register.jwt)
+    const jwtLog = useSelector((state:RootStore)=> state.user.jwt)
+
+    useEffect(()=>{
+        if (jwtLog) {
+            dispatch(userActions.parseToken())
+        }
+        if(jwtReg) {
+            dispatch(regActions.parseToken()) 
+        }
+    },[jwtLog, jwtReg, dispatch])
+
+    const clearProfile = () =>{ 
+        dispatch(userActions.clearToken())
+        dispatch(regActions.clearToken())
+        dispatch(userActions.logaut())
+        dispatch(regActions.logout())
+    }
+
     return (
         <>
         <div className={cn(style.appMain)}> 
             <div className={style.userPanel}>
                 <div className={cn(style.userInfo)}>
-                    <img src="/src/assets/user_icon.svg" alt="user_icon" title="User-img"/>
-                    <span className={cn(style.userName)}>Alex Malkov</span>
-                    <span className={cn(style.userMail)}>malkov_228369</span>
+                    <img className={style.img} src="/src/assets/user_icon.svg" alt="user_icon" title="User-img"/>
+                    <span className={cn(style.userName)}>{name} {surname}</span>
+                    <span className={cn(style.userMail)}>{email}</span>
                 </div>
                 <div className={style.navbar}>
                     <NavLink to={"/"} className={({ isActive }) => cn(style.link,{ [style.active]: isActive })}>
@@ -27,7 +56,7 @@ function Layout () {
                     </NavLink>
                 </div>
                 <Button onClick={()=>{ 
-                disputch(logaut())
+                clearProfile()
                 loginLink("/auth/login");
                 }} className={cn(style.reset)}>
                     <img className={cn(style.iconBtn)} src="/src/assets/power-button.svg" alt="power-button" />

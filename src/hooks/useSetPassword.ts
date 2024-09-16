@@ -2,8 +2,8 @@ import { useState } from "react";
 import inputsLogo from "../components/input/constant/inputsRendr"; 
 import { IInput } from "../components/input/input.type";
 
-function useSetPassword () {
-    const [inputs, setInput] = useState<IInput[]>(inputsLogo)
+function useSetPassword (stete) {
+    const [inputs, setInput] = useState<IInput[]>(stete)
 
     function setPassword (e:React.MouseEvent<HTMLButtonElement>) {
       e.preventDefault() 
