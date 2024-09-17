@@ -1,3 +1,4 @@
+import style from "./product.module.css"
 import { useLoaderData } from "react-router-dom"
 import { IProductCard } from "../../components/product-card/productCard.type"
 
@@ -9,6 +10,7 @@ function ProductPage () {
         <h1>
             Пицца: {data[0]?.name}
         </h1>
+
         </>
     )
 }

@@ -10,10 +10,23 @@
     cursor: pointer;
 }
 
-.whiteBtn {
-    background: white;
-}
 
 .orangeBtn {
     background: orange;
+    color: white;
+    font-size: 18px;
+}
+
+
+.btnMin {
+    padding: 5px 10px;
+}
+.whiteBtn {
+    background: white;
+    font-size: 18px;
+    color: orange;
+    border: 1px solid orange;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
 }

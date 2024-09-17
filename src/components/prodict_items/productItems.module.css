@@ -1,0 +1,64 @@
+.card {
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 100px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.image {
+    height: 100%;
+    width: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.wrappCard {
+    display: flex;
+    gap: 40px;
+}
+
+.wrapperTitle {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.price {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    color: orange;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.caunt {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.btnRemove {
+    position: absolute;
+    font-size: 16px;
+    right: -30px;
+    top: 5px;
+    background: none;
+    color: rgb(199, 77, 77);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.wrapperCaunt {
+    display: flex;
+    gap: 15px;
+
+    align-items: start;
+    
+}

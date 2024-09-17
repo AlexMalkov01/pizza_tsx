@@ -38,8 +38,8 @@ function ProductCard ({
                     <div className={cn(styles.price)}>
                         {price} <span className={cn(styles.rub)}>₽</span>
                     </div>
-                    <SecondaryButton color="orange">
-                        <img onClick={addCart} className={cn(styles.icon)} src={cardBtnIconUrl} alt="корзина" />
+                    <SecondaryButton onClick={addCart} color="orange">
+                        <img  className={cn(styles.icon)} src={cardBtnIconUrl} alt="корзина" />
                     </SecondaryButton> 
 
                     <div className={cn(styles.rating)}>

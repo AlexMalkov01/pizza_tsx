@@ -30,6 +30,27 @@ export const cartSlice = createSlice({
                     return i
                 })
             }
+        } ,
+
+        subtraction: (state , action) =>{
+            const unicId = state.items.find((i)=> i.id === action.payload) 
+            if (unicId) {
+                state.items.map((i)=>{
+                    if (i.id === action.payload ) {
+                        if(i.count > 1) {
+                            i.count--
+                        }
+                    }
+                    return i
+                })
+            }
+        },
+
+        remove:(state , action)=> {
+            const unicId = state.items.find((i)=> i.id === action.payload) 
+            if (unicId) {
+              state.items = state.items.filter(i=> i.id !== action.payload)
+            }
         }
     }
 }) 
