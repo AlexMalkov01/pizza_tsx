@@ -10,6 +10,8 @@ import { IProductCard } from "../components/product-card/productCard.type"
 import ProductItem from "../components/prodict_items/productItems.tsx"
 import cn from "classnames"
 import { ICartItems } from "../store/slice/cart"
+import Loader from "../helpers/loader/loader.tsx"
+import Button from "../components/button/button.tsx"
 function Cont () {
 
    const [products ,setProdictItem] = useState<IProductCard[]>([])
@@ -55,9 +57,11 @@ function Cont () {
        <Header>
          Корзина
        </Header> 
-       <main>
+       <main className={cn(style.cardMain)}>
+         {!products.length && !!productItems.length && <Loader/> } 
+         {!productItems.length && <h2>Корзина пуста</h2>}
          <div className={cn(style.wrapperCard)}>
-         {
+         { !!products.length &&
             productItems.map((item)=>{
                const product = products.find((i)=> i.id === item.id)
                if (product) {
@@ -102,6 +106,10 @@ function Cont () {
                   <span className={cn(style.rub)}>₽</span>
                </span>
             </div>
+
+            <Button className={cn(style.postBtn)} size="bigBtn">
+               Оформить
+            </Button>
          </div>
        </main>
        </>
@@ -111,6 +119,3 @@ function Cont () {
 
 export default Cont
 
-function dispatch(arg0: any) {
-   throw new Error("Function not implemented.")
-}

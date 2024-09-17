@@ -1,5 +1,8 @@
+.cardMain {
+    margin-top: 25px;
+}
+
 .wrapperCard {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -7,11 +10,16 @@
 
 .wrapperPrice {
     margin-top: 50px;
+    min-width: 400px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
 }
 
 .price {
     display: flex;
-    width: 800px;
+    min-width: 400px;
+    max-width: 800px;
     justify-content: space-between;
     padding: 10px;
 
@@ -37,4 +45,10 @@
     display: flex;
     gap: 5px;
     align-items: center;
+}
+
+.postBtn {
+    margin-top: 50px;
+    display: flex;
+    align-self: center;
 }

@@ -1,10 +1,10 @@
 .card {
     position: relative;
     display: flex;
-    width: 800px;
+    min-width: 400px;
+    max-width: 800px;
     height: 100px;
     justify-content: space-between;
-    position: relative;
 }
 
 .image {
@@ -60,5 +60,4 @@
     gap: 15px;
 
     align-items: start;
-    
 }

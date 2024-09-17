@@ -54,11 +54,14 @@ function Layout () {
                     <span className={cn(style.userMail)}>{email}</span>
                 </div>
                 <div className={style.navbar}>
-                    <NavLink to={"/"} className={({ isActive }) => cn(style.link,{ [style.active]: isActive })}>
+                    <NavLink to={"/"} className={({ isActive }) => cn(style.link,{
+                         [style.active]: isActive ,
+                         })}>
                         Меню
                     </NavLink>
-                    <NavLink to={"/cont"} className={({ isActive }) => cn(style.link,{ [style.active]: isActive })}>
-                        Корзина {getCaunt()}
+                    <NavLink to={"/cont"} className={({ isActive }) => cn(style.link ,{ [style.active]: isActive})}>
+                        Корзина 
+                       {!!getCaunt() && <div className={cn(style.cauntCard)}>{getCaunt()}</div>}  
                     </NavLink>
                 </div>
                 <Button onClick={()=>{ 

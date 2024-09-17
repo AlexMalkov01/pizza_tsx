@@ -70,8 +70,25 @@ h1 {
 }
 
 .link {
+    position: relative;
     margin-top: auto;
     text-decoration: none;
+}
+
+.cauntCard {
+    position: absolute;
+    font-size:12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    right: -25px;
+    color: white;
+    background-color: orange;
+    border-radius: 50px;
 }
 
 .content {
