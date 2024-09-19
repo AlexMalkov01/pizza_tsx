@@ -1,3 +1,4 @@
 export enum STOREGE_KEYS {
-    JWT = "jwt"
+    JWT = "jwt",
+    cart = "cart"
 }

@@ -1,0 +1,71 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapperNav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navBtn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    padding: 15px 15px;
+}
+
+.img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.main {
+    margin-top: 50px;
+    display: flex;
+
+    gap: 50px;
+}
+
+.imgProduct {
+    border-radius: 12px;
+    
+}
+
+.wrapperProductInfo {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+}
+
+.productPrice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.productReiting {
+    display: flex;
+    justify-content: space-between;
+}

@@ -12,11 +12,15 @@ import cn from "classnames"
 import { ICartItems } from "../store/slice/cart"
 import Loader from "../helpers/loader/loader.tsx"
 import Button from "../components/button/button.tsx"
+import { STOREGE_KEYS } from "../enams/storege.enam.ts"
+import { loadState } from "../store/storege.ts"
 function Cont () {
 
    const [products ,setProdictItem] = useState<IProductCard[]>([])
    const productItems = useSelector((state:RootStore)=> state.cart.items)
+   const TOKEN = loadState<{ jwt:string }>(STOREGE_KEYS.JWT)?.jwt 
 
+   
    const getProduct = async (id:number)=> {
       const {data} = await axios(`${API_PRODUCT}/products/${id}`, {
          headers: {
@@ -25,8 +29,6 @@ function Cont () {
       })
       return data[0]
    } 
-
-   console.log(products);
    
    const getProductsCart = async () =>{
       const res = await Promise.all(productItems.map((i)=> getProduct(i.id))) 

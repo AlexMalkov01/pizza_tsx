@@ -1,4 +1,3 @@
 import { useSelector } from "react-redux"
 
 export const API_PRODUCT = "https://devexapi.vercel.app/devex/api"
-export const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTIzZDc4ZTg2ZDYwNTFkNjg5ZjhjN2MiLCJpc0FkbWluIjpmYWxzZSwibG9naW4iOiJBbGV4MjI4MzY5QHlhbmRleC5ydSIsImVtYWlsIjoiQWxleDIyODM2OUB5YW5kZXgucnUiLCJuYW1lIjoi0JDQu9C10LrRgdC10LkgIiwic3VybmFtZSI6ItCc0LDQu9C60L7QsiIsImlhdCI6MTcyNjUwNzM2MiwiZXhwIjoxNzI2NTkzNzYyfQ.rI2IFMOmgC671PAvSEr_RfTusFZDIE1Oe8QT7uekh-E"

@@ -1,4 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadState } from "../storege";
+import { STOREGE_KEYS } from "../../enams/storege.enam";
+import { jwtDecode } from "jwt-decode";
+import { IUserProfile } from "./user";
 
 export interface ICartItems  {
     id:number,
@@ -7,10 +11,12 @@ export interface ICartItems  {
 
 export interface IItems {
     items:ICartItems[]
+
 }
 
+
 const initialState:IItems = {
-    items:[]
+    items: loadState<IItems>(STOREGE_KEYS.cart)?.items 
 }
 
 
@@ -51,6 +57,10 @@ export const cartSlice = createSlice({
             if (unicId) {
               state.items = state.items.filter(i=> i.id !== action.payload)
             }
+        },
+        logaut: (state) => {
+            state.items = [] 
+            localStorage.removeItem(STOREGE_KEYS.cart)
         }
     }
 }) 

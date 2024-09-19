@@ -44,6 +44,7 @@
 }
 
 .btnRemove {
+    transition: .1s all ease;
     position: absolute;
     font-size: 16px;
     right: -30px;
@@ -53,6 +54,10 @@
     border: none;
     font-weight: 600;
     cursor: pointer;
+}
+
+.btnRemove:hover {
+    font-size: 18px;
 }
 
 .wrapperCaunt {

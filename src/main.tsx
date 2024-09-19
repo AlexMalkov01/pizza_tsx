@@ -10,6 +10,9 @@ import axios from 'axios'
 import { API_PRODUCT, TOKEN } from './helpers/helper.ts'
 import { IProductCard } from './components/product-card/productCard.type.ts'
 import IsLoginToken from './components/isLoginToken/isLoginToken.tsx'
+import { STOREGE_KEYS } from './enams/storege.enam.ts'
+import { loadState } from './store/storege.ts'
+
 
 
 
@@ -39,7 +42,7 @@ const rout = createBrowserRouter([{
       const { id } = params; 
       const { data } = await axios<IProductCard[]>(`${API_PRODUCT}/products/${id}`, {
         headers: {
-          Authorization :`Bearer ${TOKEN}`
+          Authorization :`Bearer ${loadState<{ jwt:string }>(STOREGE_KEYS.JWT)?.jwt }`
         }
       });
       return data

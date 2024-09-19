@@ -16,8 +16,14 @@ export const store = configureStore({
 store.subscribe(()=> {
     const stete:RootStore = store.getState();
     const jwt = stete.user.jwt 
+    const items = stete.cart.items 
+
     if (jwt) {
         saveState({ jwt },STOREGE_KEYS.JWT)
+    }
+
+    if (items) {
+        saveState({items }, STOREGE_KEYS.cart)
     }
 })
 

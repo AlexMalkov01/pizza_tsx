@@ -9,12 +9,22 @@ import { IProductCard } from "../../components/product-card/productCard.type"
 import Loader from "../../helpers/loader/loader"
 import ProductCard from "../../components/product-card/productCard"
 import MenuList from "./menuLisst/menuList"
+import { STOREGE_KEYS } from "../../enams/storege.enam"
+import { loadState } from "../../store/storege"
 
 function Menu () { 
 
-    const [products , setProducts] = useState<IProductCard[]>([]) 
-    const [loader , setLoaeder] = useState<boolean>(false)
-    const [error , setError] = useState<string|null>()
+    const [products , setProducts] = useState<IProductCard[]>([]);
+    const [loader , setLoaeder] = useState<boolean>(false);
+    const [error , setError] = useState<string|null>();
+    const TOKEN =  loadState<{ jwt:string }>(STOREGE_KEYS.JWT)?.jwt 
+ 
+    const search = (value:string) => { 
+        const string = value.toUpperCase().trim()        
+        const filterProducts = products.filter((product)=> product.name.toUpperCase().trim().includes(string));
+        if (!string) getApiProducts()
+        setProducts(filterProducts)
+    }
 
     useEffect(()=>{
         setLoaeder(true)
@@ -49,7 +59,7 @@ function Menu () {
             <Header>
                  Меню
             </Header>
-            <Search placeholder="Введите блюдо или состав"/>
+            <Search onChange={(e)=> search(e.target.value)} placeholder="Введите блюдо или состав"/>
         </header> 
         <main className={cn(style.main)}> 
             { loader && <Loader/> }

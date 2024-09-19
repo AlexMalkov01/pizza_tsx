@@ -7,6 +7,7 @@ import { useCallback, useEffect } from "react";
 import { IUserProfile, userActions } from "../../store/slice/user";
 import { RootStore } from "../../store/store";
 import { regActions } from "../../store/slice/regist";
+import { cartActions } from "../../store/slice/cart";
 
 function Layout () {
     const loginLink = useNavigate()
@@ -42,6 +43,7 @@ function Layout () {
         dispatch(regActions.clearToken())
         dispatch(userActions.logaut())
         dispatch(regActions.logout())
+        dispatch(cartActions.logaut())
     }
 
     return (
