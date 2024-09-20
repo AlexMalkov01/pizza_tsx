@@ -22,7 +22,7 @@ function ProductPage () {
         <header className={cn(style.header)}>
         <div className={cn(style.wrapperNav)}>
             <button onClick={()=>navMain("/")} className={cn(style.navBtn)}>
-                <img style={{width:"15px",height:"20px"}} src="/src/assets/left-arrow.svg" alt="left-icon" />
+                <img style={{width:"15px",height:"20px"}} src="/src/assets/left-icon.svg" alt="left-icon" />
             </button>
             <Header>Пицца: {product?.name}</Header>
         </div>
