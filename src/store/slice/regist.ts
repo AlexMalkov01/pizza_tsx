@@ -4,7 +4,7 @@ import axios, { AxiosError } from "axios";
 import { API_PRODUCT } from "../../helpers/helper";
 import { loadState, saveState } from "../storege";
 import { jwtDecode } from "jwt-decode";
-import { IUserProfile, login } from "./user";
+import { IUserProfile } from "./user";
 import Swal from "sweetalert2";
 
 export interface IRegister {
@@ -30,7 +30,6 @@ export interface IRegister {
     async (params: { name: string; surname: string; email: string; password: string }) => {
       try {
         const { name, surname, email, password } = params; 
-        console.log({ name, surname, email, password });
         const { data } = await axios.post(`${API_PRODUCT}/users/registration`, { name, surname, email, password });
         const { data:loginData } = await axios.post(`${API_PRODUCT}/users/login`, { email, password })
         saveState({ jwt:loginData.token}, STOREGE_KEYS.JWT) 
@@ -54,9 +53,7 @@ export interface IRegister {
         parseToken: (stete) => {
             if (stete.jwt) {
                 const parseJwt = jwtDecode<IUserProfile>(stete.jwt);
-                const {email ,name,surname} = parseJwt;
-                console.log(email,name);
-                
+                const {email ,name,surname} = parseJwt;                
                 stete.profile = {
                     email,
                     name,

@@ -23,6 +23,7 @@ function Menu () {
         const string = value.toUpperCase().trim()        
         const filterProducts = products.filter((product)=> product.name.toUpperCase().trim().includes(string));
         if (!string) getApiProducts()
+            
         setProducts(filterProducts)
     }
 

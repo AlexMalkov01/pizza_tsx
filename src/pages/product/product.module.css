@@ -40,13 +40,12 @@
 .main {
     margin-top: 50px;
     display: flex;
-
+    height: 250px;
     gap: 50px;
 }
 
 .imgProduct {
     border-radius: 12px;
-    
 }
 
 .wrapperProductInfo {
@@ -68,4 +67,22 @@
 .productReiting {
     display: flex;
     justify-content: space-between;
+}
+
+.gridients {
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
+}
+
+.wrapperGridient {
+    margin-top: 10px;
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.gridient {
+    list-style-position: inside;
 }

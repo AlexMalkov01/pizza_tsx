@@ -42,8 +42,12 @@ function ProductPage () {
                 <span>Рейтинг</span>
                 <span>{product.rating}</span>
                 </div>
-                <div>
-                    Состав
+                <div className={cn(style.gridients)}>
+                    Состав:
+
+                    <ul className={cn(style.wrapperGridient)}>
+                        {product.ingredients.map((gridient)=><li className={cn(style.gridient)}>{gridient}</li>)}
+                    </ul>
                 </div>
             </div>
         </main>

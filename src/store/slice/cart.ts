@@ -16,7 +16,7 @@ export interface IItems {
 
 
 const initialState:IItems = {
-    items: loadState<IItems>(STOREGE_KEYS.cart)?.items 
+    items: loadState<IItems>(STOREGE_KEYS.cart)?.items ?? []
 }
 
 

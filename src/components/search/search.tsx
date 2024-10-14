@@ -18,9 +18,8 @@ function Search ({placeholder, className,...props}:ISearch) {
         {...props} 
         id="search"
         />
-        
         </div>
-
+        
         </>
     )
 }

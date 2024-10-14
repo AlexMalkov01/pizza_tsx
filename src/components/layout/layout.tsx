@@ -14,9 +14,9 @@ function Layout () {
     const dispatch = useDispatch()
     const cart = useSelector((store:RootStore)=> store.cart.items)
     
-    const getCaunt = useCallback(()=>{
-       return cart.reduce((acc, i)=> acc+= i.count,0)
-    },[cart])
+    const getCaunt = ()=>{
+       return cart.reduce((acc, i)=> acc+= i.count,0) 
+    }
     
     const { email, name, surname } = useSelector((state: RootState) => {
         
